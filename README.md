@@ -77,18 +77,20 @@ Values are PSNR / SSIM
 Training and inference notebooks are commented to ease application. Information below are meant to provide additional guidance!
 
 ## Training models and reproducing results
-1) Download the open-source data, if you want to re-train models or reproduce results using notebooks of this repository
-2) Prepare data structure for repository using the notebooks in the folder "Daten"
-3) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
-4) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for Testsets
-5) Turn precicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
-6) Calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
+1) download the open-source data, if you want to re-train models or reproduce results using notebooks of this repository
+2) place the unzipped FMD files from the FMD dataset in 'Daten/FMD_rawdata'
+3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
+5) prepare training data structure for repository (see below) by running FMD_to_tiles.ipynb and Hagen_to_tiles.ipynb
+6) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
+7) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for Testsets
+8) turn precicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
+9) calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
 
 ## Training models with your own data
 1) choose notebook depending on datatype of your images or adjust your images accordingly:
-- Basemodel_FMD.ipynb if you use 8 bit data
-- Basemodel_Hagen.ipynb if you use 16 bit data
-- FMD_to_Hagen_Transfer.ipynb if you use 16 bit data
+- Basemodel_FMD.ipynb if you use 8-bit data
+- Basemodel_Hagen.ipynb if you use 16-bit data
+- FMD_to_Hagen_Transfer.ipynb if you use 16-bit data
 
 2) Put your training data in respective folders ("Daten/YourGT" and "Daten/YourNoisy")
 3) Adjust variables path_GT and path_noisy in the notebook to path_GT = path/'Daten/YourGT' and path_noisy = path/'Daten/YourNoisy'
