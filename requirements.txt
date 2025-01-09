@@ -1,0 +1,8 @@
+fastai==2.7.15
+imageio==2.34.2
+matplotlib==3.8.4
+numpy==2.2.1
+pyimagej==1.5.0
+scipy==1.15.0
+skimage==0.0
+torcheval==0.0.7
