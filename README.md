@@ -115,10 +115,12 @@ Training and inference notebooks are commented to ease application. Information 
 Datasets were downloaded from their respective sites and stored in the folders:
 - 'Daten/FMD_rawdata'
 - 'Daten/Hagen_rawdata'
+
 Running the notebooks:
 - FMD_images_to_tiles.ipynb
 - Hagen_images_to_tiles.ipynb
-restructures training and testing images in the folder "Daten", adhering to the following structure:
+
+in the folder "Daten" restructures training and test images, adhering to the following structure:
 
       - FMD_GT          # ground truth image data for training, result from running (n=60 000):
       - FMD_noisy       # noisy image data for training, result from running (n=60 000):
@@ -138,8 +140,10 @@ restructures training and testing images in the folder "Daten", adhering to the 
                       - noisy_images        # noisy test data averaged from 2, 4, 8, 16 
                       - noisy_tiles         # noisy 256x256 image tiles used as model input
                     
-The folder "Data" further contains notebooks used for pre-processing of the datasets prior to training and testing:
+Pre- and post-processing notebooks:
 - FMD_image_to_tiles.ipynb: generates 256x256 pixel tiles for FMD testset for inference 
-- FMD_tiles_to_images.ipynb: generates 512x512 images (original size) from the tiles after Inference 
+- FMD_tiles_to_images.ipynb: generates 512x512 images (original size) from the tiles after Inference
+- FMD_analyze.ipynb: provides PSNR and SSIM for the FMD testset 
 - Hagen_image_to_tiles.ipynb: generates 256x256 pixel tiles for Hagen training and test images  
 - Hagen_tiles_to_images.ipynb: generates images of original size from tiles (test set) after Inference
+- Hagen_analyze.ipynb: provides PSNR and SSIM for the Hagen testset
