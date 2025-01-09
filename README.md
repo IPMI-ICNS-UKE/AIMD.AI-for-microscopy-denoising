@@ -9,7 +9,8 @@ Models are trained using one or both of the following two datasets:
 2) "Fluorescence Microscopy Datasets for Training Deep Neural Networks" - CC0 license
     - http://gigadb.org/dataset/view/id/100888
     - 16 bit image data, filetype: tif
-    - referred to as Hagen data 
+    - referred to as Hagen data
+       
 Details regarding samples and data acquistion can be found in their respective publications.
 
 # Prior to using this repository
