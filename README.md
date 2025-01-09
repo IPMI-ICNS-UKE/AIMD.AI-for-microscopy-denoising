@@ -30,7 +30,7 @@ The full loss is calculated as the sum of:
 MSE and PSNR are tracked during training. Respective metrics could be included into the loss by adjusting the notebook Perception_loss.ipynb
 
 # Model performance on the FMD test set
-
+## Visual assessment
 ![FMD](https://github.com/user-attachments/assets/9f9b50ae-2722-4779-bb43-04719c561a0a)
 
 ## Quantitative assessment
