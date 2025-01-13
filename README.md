@@ -60,7 +60,7 @@ Values are PSNR / SSIM, result of FMD_analyze.ipynb
 
 ## Quantitative assessment of Actin and Membrane images
 Values are PSNR / SSIM, result of Hagen_analyze.ipynb
-|Method  |Actin 20x| Actin 60x noise 1| Actin 60x noise 2|Actin confocal|Memrane|
+|Sample  |Actin 20x| Actin 60x noise 1| Actin 60x noise 2|Actin confocal|Memrane|
 |---|---|---|---|---|---|
 |Method||||||
 |Raw|24.2 / 0.34|28.0 / 0.53|18.4 / 0.17|24.7 / 0.39|29.5 / 0.61|
@@ -70,7 +70,7 @@ Values are PSNR / SSIM, result of Hagen_analyze.ipynb
 
 ## Quantitative assessment of Mito and Nucleus images
 Values are PSNR / SSIM
-|Samples  |Mito 20x| Mito 60x noise 1| Mito 60x noise 2|Mito confocal|Nucleus|
+|Sample  |Mito 20x| Mito 60x noise 1| Mito 60x noise 2|Mito confocal|Nucleus|
 |---|---|---|---|---|---|
 |Method||||||
 |Raw|24.6 / 0.35|28.0 / 0.51|20.1 / 0.30|22.2 / 0.37|24.7 / 0.39|
