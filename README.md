@@ -1,5 +1,7 @@
 # AIMD. AI for microscopy denoising
-This repository is showcasing the use of open-source microscopy data for deep learning based image denoising and transfer learning.
+This repository is demonstrating the use of open-source microscopy data for deep learning based image denoising and transfer learning as showcased in:
+Lohr D, Meyer L, Woelk L-M, et al (2025) T-Cell Activation. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
+
 All code is available as jupyter notebooks which can be customized for application to new data.
 Models are trained using one or both of the following two datasets:
 1) "Fluorescence Microscopy Denoising (FMD) dataset" - CC BY-SA 4.0 license
@@ -11,7 +13,9 @@ Models are trained using one or both of the following two datasets:
     - 16 bit image data, filetype: tif
     - referred to as Hagen data
        
-Details regarding samples and data acquistion can be found in their respective publications.
+Details regarding samples and data acquistion can be found in their respective publications. 
+
+If you are using this repository in your research, please cite: Lohr D, Meyer L, Woelk L-M, et al (2025) T-Cell Activation. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
 
 # Prior to using this repository
 1) clone the repository
@@ -78,7 +82,7 @@ Training and inference notebooks are commented to ease application. Information 
 
 ## Training models and reproducing results
 1) download the open-source data, if you want to re-train models or reproduce results using notebooks of this repository
-2) place the unzipped FMD files from the FMD dataset in 'Daten/FMD_rawdata'
+2) place the FMD file (.zip) from the FMD dataset in 'Daten/FMD_rawdata'
 3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
 5) prepare training data structure for repository (see below) by running FMD_to_tiles.ipynb and Hagen_to_tiles.ipynb
 6) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
@@ -92,26 +96,26 @@ Training and inference notebooks are commented to ease application. Information 
 - Basemodel_Hagen.ipynb if you use 16-bit data
 - FMD_to_Hagen_Transfer.ipynb if you use 16-bit data
 
-2) Put your training data in respective folders ("Daten/YourGT" and "Daten/YourNoisy")
-3) Adjust variables path_GT and path_noisy in the notebook to path_GT = path/'Daten/YourGT' and path_noisy = path/'Daten/YourNoisy'
-4) Adjust the filename to save 'YourModelName' and avoid overwriting prior models
+2) put your training data in respective folders ("Daten/YourGT" and "Daten/YourNoisy")
+3) adjust variables path_GT and path_noisy in the notebook to path_GT = path/'Daten/YourGT' and path_noisy = path/'Daten/YourNoisy'
+4) adjust the filename to save 'YourModelName' and avoid overwriting prior models
 5) run the notebook (set a proper learning rate using "learn_den.lr_find()" and set the number of epochs to train)
 6) the training progress is printed in the notebook and also saved in a .csv file
 
 ## Directly applying our models to your images
-1) Decide which model you want to use and run the corresponding notebook (do take note, that Hagen models use 16b input images, while the FMD model uses 8 bit input images):
+1) decide which model you want to use and run the corresponding notebook (do take note, that Hagen models use 16b input images, while the FMD model uses 8 bit input images):
 - Inference_Basemodel_FMD.ipynb
 - Inference_Basemodel_Hagen.ipynb
 - Inference_FMD_to_Hagen.ipynb (trained with either Actin or all Hagen data)
 
-2) Adjust path_GT and path_noisy variables to your test/target data folder (path_GT = path/'Daten/YourTest' and path_noisy = path/'Daten/YourTest')
-3) Adjust path_test variable to your test/target data folder (path_test = path/'Daten/YourTest')
-4) Adjust path_preds variable as a folder to save your data in, e.g. path_preds = path/'Daten/YourPredictions'
+2) adjust path_GT and path_noisy variables to your test/target data folder (path_GT = path/'Daten/YourTest' and path_noisy = path/'Daten/YourTest')
+3) adjust path_test variable to your test/target data folder (path_test = path/'Daten/YourTest')
+4) adjust path_preds variable as a folder to save your data in, e.g. path_preds = path/'Daten/YourPredictions'
 5) run the notebook for inference  
 
 ## Directly applying models you trained 
-1) Run steps 1-4 as listed above
-2) Adjust the filename of the model to load in the line: learn_den.load('YourModelName').to_fp16()
+1) run steps 1-4 as listed above
+2) adjust the filename of the model to load in the line: learn_den.load('YourModelName').to_fp16()
 3) run the notebook for inference
    
 ## Data structure of the repository
@@ -123,7 +127,7 @@ Running the notebooks:
 - FMD_images_to_tiles.ipynb
 - Hagen_images_to_tiles.ipynb
 
-in the folder "Daten" restructures training and test images, adhering to the following structure:
+in the folder "Daten" sorts the "rawdata" in training and test images, adhering to the following structure:
 
       - FMD_GT          # ground truth image data for training, result from running (n=60 000):
       - FMD_noisy       # noisy image data for training, result from running (n=60 000):
