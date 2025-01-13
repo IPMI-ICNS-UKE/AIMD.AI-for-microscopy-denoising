@@ -1,6 +1,6 @@
 # AIMD. AI for microscopy denoising
 This repository is demonstrating the use of open-source microscopy data for deep learning based image denoising and transfer learning as showcased in:
-Lohr D, Meyer L, Woelk L-M, et al (2025) T-Cell Activation. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
+Lohr D, Meyer L, Woelk L-M, Kovacevic D, Werner R. (2025) T-Cell Activation. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
 
 All code is available as jupyter notebooks which can be customized for application to new data.
 Models are trained using one or both of the following two datasets:
