@@ -155,3 +155,16 @@ Pre- and post-processing notebooks:
 - Hagen_image_to_tiles.ipynb: generates 256x256 pixel tiles for Hagen training and test images  
 - Hagen_tiles_to_images.ipynb: generates images of original size from tiles (test set) after Inference
 - Hagen_analyze.ipynb: provides PSNR and SSIM for the Hagen testset
+
+```
+@incollection{Lohr2025,
+    author       = {Lohr, David and Meyer, Lina and Woelk, Lena-Marie and Kovacevic, Dejan and Werner, René},
+    title        = {Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources},
+    booktitle    = {T-Cell Activation: Methods and Protocols},
+    editor       = {Diercks, Björn-Philipp},
+    year         = {2025},
+    publisher    = {Springer US},
+    address      = {New York, NY},
+    pages        = {XXX--XXX}
+}
+```
