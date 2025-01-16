@@ -60,7 +60,7 @@ Values are PSNR / SSIM, result of FMD_analyze.ipynb
 
 ## Quantitative assessment of Actin and Membrane images
 Values are PSNR / SSIM, result of Hagen_analyze.ipynb
-|Sample  |Actin 20x| Actin 60x noise 1| Actin 60x noise 2|Actin confocal|Memrane|
+|Sample  |Actin 20x| Actin 60x noise 1| Actin 60x noise 2|Actin confocal|Membrane|
 |---|---|---|---|---|---|
 |Method||||||
 |Raw|24.2 / 0.34|28.0 / 0.53|18.4 / 0.17|24.7 / 0.39|29.5 / 0.61|
@@ -85,10 +85,10 @@ Training and inference notebooks are commented to ease application. Information 
 1) download the open-source data, if you want to re-train models or reproduce results using notebooks of this repository
 2) place the FMD file (.zip) from the FMD dataset in 'Daten/FMD_rawdata'
 3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
-5) prepare training data structure for repository (see below) by running FMD_to_tiles.ipynb and Hagen_to_tiles.ipynb
+5) prepare training data structure for repository (see below) by running FMD_image_to_tiles.ipynb and Hagen_image_to_tiles.ipynb
 6) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
 7) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for Testsets
-8) turn precicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
+8) turn predicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
 9) calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
 
 ## Training models with your own data
@@ -150,7 +150,7 @@ in the folder "Daten" sorts the "rawdata" in training and test images, adhering 
                     
 Pre- and post-processing notebooks:
 - FMD_image_to_tiles.ipynb: generates 256x256 pixel tiles for FMD testset for inference 
-- FMD_tiles_to_images.ipynb: generates 512x512 images (original size) from the tiles after Inference
+- FMD_tiles_to_images.ipynb: generates 512x512 images (original size) from the tiles after inference
 - FMD_analyze.ipynb: provides PSNR and SSIM for the FMD testset 
 - Hagen_image_to_tiles.ipynb: generates 256x256 pixel tiles for Hagen training and test images  
 - Hagen_tiles_to_images.ipynb: generates images of original size from tiles (test set) after Inference
