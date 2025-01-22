@@ -1,6 +1,6 @@
 # AIMD. AI for microscopy denoising
 This repository is demonstrating the use of open-source microscopy data for deep learning based image denoising and transfer learning as showcased in:
-Lohr D, Meyer L, Woelk L-M, Kovacevic D, Werner R. (2025) Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
+Lohr D, Meyer L, Woelk L-M, Kovacevic D, Diercks B-P, Werner R. (2025) Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
 
 All code is available as jupyter notebooks which can be customized for application to new data.
 Models are trained using one or both of the following two datasets:
@@ -158,7 +158,7 @@ Pre- and post-processing notebooks:
 
 ```
 @incollection{Lohr2025,
-    author       = {Lohr, David and Meyer, Lina and Woelk, Lena-Marie and Kovacevic, Dejan and Werner, René},
+    author       = {Lohr, David and Meyer, Lina and Woelk, Lena-Marie and Kovacevic, Dejan and Diercks, Björn-Philipp and Werner, René},
     title        = {Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources},
     booktitle    = {T-Cell Activation: Methods and Protocols},
     editor       = {Diercks, Björn-Philipp},
