@@ -16,7 +16,7 @@ Models are trained using one or both of the following two datasets:
 Details regarding samples and data acquistion can be found in their respective publications. 
 
 If you are using this repository in your research, please cite:
-Lohr D, Meyer L, Woelk L-M, Kovacevic D, Werner R. (2025) Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
+Lohr D, Meyer L, Woelk L-M, Kovacevic D, Diercks B-P, Werner R. (2025) Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
 
 # Prior to using this repository
 1) clone the repository
