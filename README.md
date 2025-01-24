@@ -83,19 +83,20 @@ Training and inference notebooks are commented to ease application. Information 
 
 ## Training models and reproducing results
 To train the models and reproduce our results you can either download the fully pre-procssed data or download the open-source data and rerun the pre-processing notebooks
-### get the fully preprocssed data
+### Option1: getting the fully preprocssed data
 1) download the pre-processed data here:
-2) place the downloaded folders in the 'Daten' 
+2) place the downloaded folders in the folder 'Daten'
+### Option2: getting the raw data from the original data repositories
+1) download the open-source data using the links in the repository introduction
+2) place the FMD file (.zip) from the FMD dataset in 'Daten/FMD_rawdata'
+3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
+4) prepare training data structure for repository (see below) by running FMD_image_to_tiles.ipynb and Hagen_image_to_tiles.ipynb 
 ### train models and evaluate results
 1) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
 2) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for Testsets
 3) turn predicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
 4) calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
-### get the raw data from the original data repositories
-1) download the open-source data using the links in the repository introduction
-2) place the FMD file (.zip) from the FMD dataset in 'Daten/FMD_rawdata'
-3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
-4) prepare training data structure for repository (see below) by running FMD_image_to_tiles.ipynb and Hagen_image_to_tiles.ipynb
+   
 ## Training models with your own data
 1) choose notebook depending on datatype of your images or adjust your images accordingly:
 - Basemodel_FMD.ipynb if you use 8-bit data
