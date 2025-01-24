@@ -82,20 +82,26 @@ Values are PSNR / SSIM
 Training and inference notebooks are commented to ease application. Information below are meant to provide additional guidance!
 
 ## Training models and reproducing results
-1) download the open-source data, if you want to re-train models or reproduce results using notebooks of this repository
+To train the models and reproduce our results you can either download the fully pre-procssed data or download the open-source data and rerun the pre-processing notebooks
+### get the fully preprocssed data
+1) download the pre-processed data here:
+2) place the downloaded folders in the 'Daten' 
+### train models and evaluate results
+1) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
+2) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for Testsets
+3) turn predicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
+4) calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
+### get the raw data from the original data repositories
+1) download the open-source data using the links in the repository introduction
 2) place the FMD file (.zip) from the FMD dataset in 'Daten/FMD_rawdata'
 3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
-5) prepare training data structure for repository (see below) by running FMD_image_to_tiles.ipynb and Hagen_image_to_tiles.ipynb
-6) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
-7) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for Testsets
-8) turn predicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
-9) calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
-
+4) prepare training data structure for repository (see below) by running FMD_image_to_tiles.ipynb and Hagen_image_to_tiles.ipynb
 ## Training models with your own data
 1) choose notebook depending on datatype of your images or adjust your images accordingly:
 - Basemodel_FMD.ipynb if you use 8-bit data
 - Basemodel_Hagen.ipynb if you use 16-bit data
-- FMD_to_Hagen_Transfer.ipynb if you use 16-bit data
+2) select the Transfer notebook to use a pre-trained model for training and benefit from transfer learning
+- FMD_to_Hagen_Transfer.ipynb (16-bit data)
 
 2) put your training data in respective folders ("Daten/YourGT" and "Daten/YourNoisy")
 3) adjust variables path_GT and path_noisy in the notebook to path_GT = path/'Daten/YourGT' and path_noisy = path/'Daten/YourNoisy'
@@ -109,10 +115,9 @@ Training and inference notebooks are commented to ease application. Information 
 - Inference_Basemodel_Hagen.ipynb
 - Inference_FMD_to_Hagen.ipynb (trained with either Actin or all Hagen data)
 
-2) adjust path_GT and path_noisy variables to your test/target data folder (path_GT = path/'Daten/YourTest' and path_noisy = path/'Daten/YourTest')
-3) adjust path_test variable to your test/target data folder (path_test = path/'Daten/YourTest')
-4) adjust path_preds variable as a folder to save your data in, e.g. path_preds = path/'Daten/YourPredictions'
-5) run the notebook for inference  
+2) adjust path_test variable to your test/target data folder (path_test = path/'Daten/YourTest')
+3) adjust path_preds variable as a folder to save your data in, e.g. path_preds = path/'Daten/YourPredictions'
+4) run the notebook for inference  
 
 ## Directly applying models you trained 
 1) run steps 1-4 as listed above
@@ -142,8 +147,8 @@ in the folder "Daten" sorts the "rawdata" in training and test images, adhering 
                     
       - Hagen_actin_GT          # ground truth tiles of actin images for training (n=3859)
       - FMD_actin_noisy         # noisy tiles of actin images for training (n=3859)      
-      - Hagen_GT                # ground truth tiles of the complete dataset for training (n=36 222)
-      - Hagen_noisy             # noisy tiles of the complete dataset for training (n=36 222)
+      - Hagen_GT                # ground truth tiles of the complete dataset for training (n=32 363)
+      - Hagen_noisy             # noisy tiles of the complete dataset for training (n=32 363)
       - Hagen_testmix - gt_images           # gt test data, averaged from 400 image acquistions
                       - noisy_images        # noisy test data averaged from 2, 4, 8, 16 
                       - noisy_tiles         # noisy 256x256 image tiles used as model input
