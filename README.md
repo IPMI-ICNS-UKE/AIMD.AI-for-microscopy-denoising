@@ -17,12 +17,33 @@ Details regarding samples and data acquistion can be found in their respective p
 
 If you are using this repository in your research, please [cite](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#citation):
 
+# Contents
+1) [Repository setup](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#prior-to-using-this-repository)
+2) [Loss functions](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#loss-function-perception-loss)
+3) [Quality metrics](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#quality-metrics)
+4) [Model performance on the FMD test set](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#model-performance-on-the-fmd-test-set)
+5) [Model performance on the Hagen test set](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#model-performance-on-the-hagen-test-set)
+6) [Repository application](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#repository-application)
+7) [Citation](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#citation)
+
 # Prior to using this repository
-1) clone the repository
+1) in your console move to an appropriate directory and clone the repository
+```
+git clone https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising.git
+```
 2) create a virtual environment (conda/miniconda) and activate it
-3) install pytorch following the instructions here: https://pytorch.org/get-started/locally/
-4) install fastai (2.7.15) following the instructions here: https://docs.fast.ai 
-5) install required dependencies using the requirement.txt 
+```
+conda create -n AIMD python=3.10
+```
+```
+conda activate AIMD
+```
+3) install required dependencies using the requirement.txt
+```
+pip install requirements.txt
+```
+X) install pytorch following the instructions here: https://pytorch.org/get-started/locally/
+X) install fastai (2.7.15) following the instructions here: https://docs.fast.ai
 
 # Loss function: Perception loss
 The full loss is calculated as the sum of:
@@ -31,7 +52,7 @@ The full loss is calculated as the sum of:
 - L1 loss of gram matrices derived from 3 layers of a VGG16_bn
 
 # Quality metrics  
-MSE and PSNR are tracked during training. Respective metrics could be included into the loss by adjusting the notebook Perception_loss.ipynb
+MSE and PSNR are tracked during training. Respective metrics could be included into the loss by adjusting the notebook [Perception_loss.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Perception_loss.ipynb)
 
 # Model performance on the FMD test set
 ## Visual assessment
@@ -81,7 +102,7 @@ Values are PSNR / SSIM
 Training and inference notebooks are commented to ease application. Information below are meant to provide additional guidance!
 
 ## Training models and reproducing results
-To train the models and reproduce our results you can either download the fully pre-procssed data or download the open-source data and rerun the pre-processing notebooks
+To train the models and reproduce our results you can either download the fully pre-processed data or download the open-source data and rerun the pre-processing notebooks
 ### Option 1: getting the fully preprocssed data
 1) download the pre-processed data here:
 2) place the downloaded folders in the folder 'Daten'
@@ -91,8 +112,8 @@ To train the models and reproduce our results you can either download the fully 
 3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
 4) prepare training data structure for repository (see below) by running FMD_image_to_tiles.ipynb and Hagen_image_to_tiles.ipynb 
 ### train models and evaluate results
-1) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer to train the models yourself
-2) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for Testsets
+1) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer.ipynb to train the models yourself
+2) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for test sets
 3) turn predicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
 4) calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
    
