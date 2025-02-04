@@ -42,8 +42,6 @@ conda activate AIMD
 ```
 pip install -r requirements.txt
 ```
-X) install pytorch following the instructions here: https://pytorch.org/get-started/locally/
-X) install fastai (2.7.15) following the instructions here: https://docs.fast.ai
 
 # Loss function: perception loss
 The full loss is calculated as the sum of:
@@ -119,10 +117,10 @@ To train the models and reproduce our results you can either download the fully 
    
 ## Training models with your own data
 1) choose notebook depending on datatype of your images or adjust your images accordingly:
-- Basemodel_FMD.ipynb if you use 8-bit data
-- Basemodel_Hagen.ipynb if you use 16-bit data
+- [Basemodel_FMD.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Basemodel_FMD.ipynb) if you use 8-bit data
+- [Basemodel_Hagen.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Basemodel_Hagen.ipynb) if you use 16-bit data
 2) select the Transfer notebook to use a pre-trained model for training and benefit from transfer learning
-- FMD_to_Hagen_Transfer.ipynb (16-bit data)
+- [FMD_to_Hagen_Transfer.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb) (16-bit data)
 
 2) put your training data in respective folders ("Daten/YourGT" and "Daten/YourNoisy")
 3) adjust variables path_GT and path_noisy in the notebook to path_GT = path/'Daten/YourGT' and path_noisy = path/'Daten/YourNoisy'
@@ -132,9 +130,9 @@ To train the models and reproduce our results you can either download the fully 
 
 ## Directly applying our models to your images
 1) decide which model you want to use and run the corresponding notebook (do take note, that Hagen models use 16b input images, while the FMD model uses 8 bit input images):
-- Inference_Basemodel_FMD.ipynb
-- Inference_Basemodel_Hagen.ipynb
-- Inference_FMD_to_Hagen.ipynb (trained with either Actin or all Hagen data)
+- [Inference_Basemodel_FMD.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Inference_Basemodel_FMD.ipynb)
+- [Inference_Basemodel_Hagen.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Inference_Basemodel_Hagen.ipynb)
+- [Inference_FMD_to_Hagen.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Inference_FMD_to_Hagen.ipynb) (trained with either Actin or all Hagen data)
 
 2) adjust path_test variable to your test/target data folder (path_test = path/'Daten/YourTest')
 3) adjust path_preds variable as a folder to save your data in, e.g. path_preds = path/'Daten/YourPredictions'
@@ -152,7 +150,7 @@ Datasets were downloaded from their respective sites and stored in the folders:
 
 Running the notebooks:
 - [FMD_images_to_tiles.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_image_to_tiles.ipynb)
-- Hagen_images_to_tiles.ipynb
+- [Hagen_images_to_tiles.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_image_to_tiles.ipynb)
 
 in the folder "Daten" sorts the "rawdata" in training and test images, adhering to the following structure:
 
@@ -175,12 +173,12 @@ in the folder "Daten" sorts the "rawdata" in training and test images, adhering 
                       - noisy_tiles         # noisy 256x256 image tiles used as model input
                     
 Pre- and post-processing notebooks:
-- FMD_image_to_tiles.ipynb: generates 256x256 pixel tiles for FMD testset for inference 
-- FMD_tiles_to_images.ipynb: generates 512x512 images (original size) from the tiles after inference
-- FMD_analyze.ipynb: provides PSNR and SSIM for the FMD testset 
-- Hagen_image_to_tiles.ipynb: generates 256x256 pixel tiles for Hagen training and test images  
-- Hagen_tiles_to_images.ipynb: generates images of original size from tiles (test set) after Inference
-- Hagen_analyze.ipynb: provides PSNR and SSIM for the Hagen testset
+- [FMD_image_to_tiles.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_image_to_tiles.ipynb): generates 256x256 pixel tiles for FMD testset for inference 
+- [FMD_tiles_to_images.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_tiles_to_images.ipynb): generates 512x512 images (original size) from the tiles after inference
+- [FMD_analyze.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_analyze.ipynb): provides PSNR and SSIM for the FMD testset 
+- [Hagen_image_to_tiles.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_image_to_tiles.ipynb): generates 256x256 pixel tiles for Hagen training and test images  
+- [Hagen_tiles_to_images.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_tiles_to_images.ipynb): generates images of original size from tiles (test set) after Inference
+- [Hagen_analyze.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_analyze.ipynb): provides PSNR and SSIM for the Hagen testset
 
 ## Citation
 ```
