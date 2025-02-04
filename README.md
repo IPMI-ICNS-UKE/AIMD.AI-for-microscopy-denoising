@@ -26,7 +26,7 @@ If you are using this repository in your research, please [cite](https://github.
 6) [Repository application](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#repository-application)
 7) [Citation](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#citation)
 
-# Prior to using this repository
+# Repository setup
 1) in your console move to an appropriate directory and clone the repository
 ```
 git clone https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising.git
