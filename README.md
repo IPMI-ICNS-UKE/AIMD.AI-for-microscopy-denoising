@@ -108,12 +108,12 @@ To train the models and reproduce our results you can either download the fully 
 1) download the open-source data using the links in the repository introduction
 2) place the FMD file (.zip) from the FMD dataset in 'Daten/FMD_rawdata'
 3) place the 16-bit TIFF files from the Hagen dataset in 'Daten/Hagen_rawdata'
-4) prepare training data structure for repository (see below) by running [FMD_image_to_tiles.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_image_to_tiles.ipynb) and Hagen_image_to_tiles.ipynb 
+4) prepare training data structure for repository (see below) by running [FMD_image_to_tiles.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_image_to_tiles.ipynb) and [Hagen_image_to_tiles.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_image_to_tiles.ipynb) 
 ### Train models and evaluate results
-1) run notebooks Basemodel_FMD.ipynb, Basemodel_Hagen.ipynb, or FMD_to_Hagen_Transfer.ipynb to train the models yourself
-2) run notebooks Inference_Basemodel_FMD.ipynb, Inference_Basemodel_Hagen.ipynb, or Inference_FMD_to_Hagen.ipynb to generate predictions for test sets
-3) turn predicted patches/tiles back to images using FMD_tiles_to_images.ipynb and Hagen_tiles_to_images.ipynb
-4) calculate PSNR and SSIM for the test sets using FMD_analyze.ipynb and Hagen_analyze.ipynb
+1) [run notebooks Basemodel_FMD.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Basemodel_FMD.ipynb), [Basemodel_Hagen.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Basemodel_Hagen.ipynb), or [FMD_to_Hagen_Transfer.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb) to train the models yourself
+2) run notebooks [Inference_Basemodel_FMD.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Inference_Basemodel_FMD.ipynb), [Inference_Basemodel_Hagen.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Inference_Basemodel_Hagen.ipynb), or [Inference_FMD_to_Hagen.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Inference_FMD_to_Hagen.ipynb) to generate predictions for test sets
+3) turn predicted patches/tiles back to images using [FMD_tiles_to_images.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_tiles_to_images.ipynb) and [Hagen_tiles_to_images.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_tiles_to_images.ipynb)
+4) calculate PSNR and SSIM for the test sets using [FMD_analyze.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_analyze.ipynb) and [Hagen_analyze.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_analyze.ipynb)
    
 ## Training models with your own data
 1) choose notebook depending on datatype of your images or adjust your images accordingly:
