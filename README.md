@@ -66,8 +66,8 @@ Values are PSNR / SSIM, result of [FMD_analyze.ipynb](https://github.com/IPMI-IC
 
 # Model performance on the Hagen test set
 - Model 1: [Basemodel_Hagen](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Basemodel_Hagen.ipynb), trained using solely Hagen Actin training images of noise level 1
-- Model 2: [FMD_to_Hagen_Transfer](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb), pre-trained using FMD data and re-trained using the same Actin images
-- Model 3: [FMD_to_Hagen_all_Transfer](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb), pre-trained using FMD training data and re-trained using all Hagen training images
+- Model 2: [FMD_to_Hagen_Transfer](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb), pre-trained using FMD data and fine-tuned using the same Actin images
+- Model 3: [FMD_to_Hagen_all_Transfer](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb), pre-trained using FMD training data and fine-tuned using all Hagen training images
 
 ## Visual assessment
 - Model 1 performs well for the Actin test data, but struggles with higher noise levels and other samples. 
