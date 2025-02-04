@@ -57,7 +57,7 @@ MSE and PSNR are tracked during training. Respective metrics could be included i
 ![FMD](https://github.com/user-attachments/assets/9f9b50ae-2722-4779-bb43-04719c561a0a)
 
 ## Quantitative assessment
-Values are PSNR / SSIM, result of FMD_analyze.ipynb
+Values are PSNR / SSIM, result of [FMD_analyze.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/FMD_analyze.ipynb)
 |Averages |1       |2       |4       |8       |16       |
 |-------  |--------|--------|--------|--------|---------|
 |Method   |        |        |        |        |         |
@@ -65,9 +65,9 @@ Values are PSNR / SSIM, result of FMD_analyze.ipynb
 |Denoised |35.1 / 0.91|36.8 / 0.93|38.1 / 0.94|39.6 / 0.96|41.4 / 0.97|
 
 # Model performance on the Hagen test set
-- Model 1: Basemodel_Hagen, trained using solely Hagen Actin training images of noise level 1
-- Model 2: FMD_to_Hagen_Transfer, pre-trained using FMD data and re-trained using the same Actin images
-- Model 3: FMD_to_Hagen_all_Transfer, pre-trained using FMD training data and re-trained using all Hagen training images
+- Model 1: [Basemodel_Hagen](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Basemodel_Hagen.ipynb), trained using solely Hagen Actin training images of noise level 1
+- Model 2: [FMD_to_Hagen_Transfer](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb), pre-trained using FMD data and re-trained using the same Actin images
+- Model 3: [FMD_to_Hagen_all_Transfer](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/FMD_to_Hagen_Transfer.ipynb), pre-trained using FMD training data and re-trained using all Hagen training images
 
 ## Visual assessment
 - Model 1 performs well for the Actin test data, but struggles with higher noise levels and other samples. 
@@ -77,7 +77,7 @@ Values are PSNR / SSIM, result of FMD_analyze.ipynb
 ![Hagen](https://github.com/user-attachments/assets/231a9301-e9ef-4341-a477-08245b58c695)
 
 ## Quantitative assessment of Actin and Membrane images
-Values are PSNR / SSIM, result of Hagen_analyze.ipynb
+Values are PSNR / SSIM, result of [Hagen_analyze.ipynb](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/blob/master/Daten/Hagen_analyze.ipynb)
 |Sample  |Actin 20x| Actin 60x noise 1| Actin 60x noise 2|Actin confocal|Membrane|
 |---|---|---|---|---|---|
 |Method||||||
