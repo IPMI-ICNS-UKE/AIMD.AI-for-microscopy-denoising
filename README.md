@@ -40,7 +40,7 @@ conda activate AIMD
 ```
 3) install required dependencies using the requirement.txt
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 X) install pytorch following the instructions here: https://pytorch.org/get-started/locally/
 X) install fastai (2.7.15) following the instructions here: https://docs.fast.ai
