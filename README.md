@@ -104,7 +104,7 @@ To train the models and reproduce our results you can either download the fully 
 ### Option 1: getting the fully preprocssed data
 1) download the pre-processed data here:
 FMD data: 10.25592/uhhfdm.16868
-Hagen data: 
+Hagen data: 10.25592/uhhfdm.16914
 2) Unzip the downloaded files in the folder 'Daten'
 ### Option 2: getting the raw data from the original data repositories
 1) download the open-source data using the links in the repository introduction
