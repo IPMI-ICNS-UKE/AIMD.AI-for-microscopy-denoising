@@ -102,10 +102,11 @@ Training and inference notebooks are commented to ease application. Information 
 ## Training models and reproducing results
 To train the models and reproduce our results you can either download the fully pre-processed data or download the open-source data and rerun the pre-processing notebooks
 ### Option 1: getting the fully preprocssed data
-1) download the pre-processed data here:
-FMD data: 10.25592/uhhfdm.16868
+1) download the pre-processed data and our trained models using the two DOIs below:
+FMD data + models: 10.25592/uhhfdm.16868
 Hagen data: 10.25592/uhhfdm.16914
-2) Unzip the downloaded files in the folder 'Daten'
+2) Unzip 'FMD.zip' and 'Hagen.zip' files in the folder 'Daten' and 'models.zip' into the folder 'models'
+3) you are good to go!
 ### Option 2: getting the raw data from the original data repositories
 1) download the open-source data using the links in the repository introduction
 2) place the FMD file (.zip) from the FMD dataset in 'Daten/FMD_rawdata'
