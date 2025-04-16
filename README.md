@@ -189,11 +189,11 @@ Pre- and post-processing notebooks:
 @incollection{Lohr2025,
     author       = {Lohr, David and Meyer, Lina and Woelk, Lena-Marie and Kovacevic, Dejan and Diercks, Björn-Philipp and Werner, René},
     title        = {Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources},
-    booktitle    = {T-Cell Activation: Methods and Protocols},
+    booktitle    = {T Cell Activation. Methods and Protocols},
     editor       = {Diercks, Björn-Philipp},
     year         = {2025},
-    publisher    = {Springer US},
+    publisher    = {Humana},
     address      = {New York, NY},
-    pages        = {XXX--XXX}
+    pages        = {21-50}
 }
 ```
