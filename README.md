@@ -1,6 +1,6 @@
 # AIMD. AI for microscopy denoising
 This repository is demonstrating the use of open-source microscopy data for deep learning based image denoising and transfer learning as showcased in:
-Lohr D, Meyer L, Woelk L-M, Kovacevic D, Diercks B-P, Werner R. (2025) Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources. In: Diercks B-P (ed) T-Cell Activation: Methods and Protocols. Springer US, New York, NY, p XXX–XXX
+Lohr, D., Meyer, L., Woelk, LM., Kovacevic, D., Diercks, BP., Werner, R. (2025). Deep Learning-Based Image Restoration and Super-Resolution for Fluorescence Microscopy: Overview and Resources. In: Diercks, BP. (eds) T Cell Activation. Methods in Molecular Biology, vol 2904. Humana, New York, NY. https://doi.org/10.1007/978-1-0716-4414-0_3
 
 All code is available as jupyter notebooks which can be customized for application to new data.
 Models are trained using one or both of the following two datasets:
@@ -15,7 +15,7 @@ Models are trained using one or both of the following two datasets:
        
 Details regarding samples and data acquistion can be found in their respective publications. 
 
-If you are using this repository in your research, please cite [Lohr et al.](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#citation):
+If you are using this repository in your research, please also cite [Lohr et al.](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#citation):
 
 # Contents
 1) [Repository setup](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#prior-to-using-this-repository)
