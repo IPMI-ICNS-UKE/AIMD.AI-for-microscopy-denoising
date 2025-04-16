@@ -15,7 +15,7 @@ Models are trained using one or both of the following two datasets:
        
 Details regarding samples and data acquistion can be found in their respective publications. 
 
-If you are using this repository in your research, please also cite [Lohr et al.](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#citation):
+If you are using this repository in your research, please cite [Lohr et al.](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#citation):
 
 # Contents
 1) [Repository setup](https://github.com/IPMI-ICNS-UKE/AIMD.AI-for-microscopy-denoising/tree/master?tab=readme-ov-file#prior-to-using-this-repository)
