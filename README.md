@@ -103,8 +103,8 @@ Training and inference notebooks are commented to ease application. Information 
 To train the models and reproduce our results you can either download the fully pre-processed data or download the open-source data and rerun the pre-processing notebooks
 ### Option 1 (recommended): getting the fully preprocssed data
 1) download the pre-processed data and our trained models using the two DOIs below:
-- FMD data + models: 10.25592/uhhfdm.16868
-- Hagen data: 10.25592/uhhfdm.16914
+- FMD data + models: [10.25592/uhhfdm.16868](https://doi.org/10.25592/uhhfdm.16868)
+- Hagen data: [10.25592/uhhfdm.16914](https://doi.org/10.25592/uhhfdm.16914)
 3) Unzip 'FMD.zip' and 'Hagen.zip' files in the folder 'Daten'
 4) Unzip 'models.zip' into the base repository folder next to model and inference notebooks
 5) You are good to go!
