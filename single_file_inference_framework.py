@@ -14,10 +14,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Tuple
 import argparse
+import sys
 import tempfile
 
 import imageio.v2 as imageio
 import numpy as np
+from tqdm import tqdm
 
 
 @dataclass
@@ -200,7 +202,8 @@ class BasemodelHagenFastAI(InferenceModel):
             bs=min(max(1, self.dls_bs), len(tile_paths)),
             num_workers=0,
         )
-        preds, _ = learn.get_preds(dl=test_dl, with_decoded=False)
+        with learn.no_bar(), learn.no_logging():
+            preds, _ = learn.get_preds(dl=test_dl, with_decoded=False)
 
         out_tiles: List[np.ndarray] = []
         for i, pred in enumerate(preds):
@@ -221,7 +224,10 @@ def load_image(path: Path) -> np.ndarray:
 
 def save_image(path: Path, image: np.ndarray) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    imageio.imwrite(path, image)
+    if image.ndim == 3:
+        imageio.mimwrite(path, image)
+    else:
+        imageio.imwrite(path, image)
 
 
 def pad_to_divisible(frame: np.ndarray, div_by: int) -> Tuple[np.ndarray, Tuple[Tuple[int, int], Tuple[int, int]]]:
@@ -314,11 +320,6 @@ def predict_tiled_like_csbdeep(frame: np.ndarray, model: InferenceModel, tile_si
             tiles.append(tile)
             tile_meta.append((yt, xt, tile.shape))
 
-    print(
-        f"[DEBUG] Tiling frame {frame.shape} into {len(y_tiles)}x{len(x_tiles)} "
-        f"= {len(tiles)} tiles (tile_size={tile_size}, overlap={overlap})"
-    )
-
     pred_tiles = model.predict_tiles(tiles)
     if len(pred_tiles) != len(tiles):
         raise ValueError("Model returned different number of predicted tiles than input tiles")
@@ -364,15 +365,28 @@ def run_frame(frame: np.ndarray, model: InferenceModel, cfg: PipelineConfig) -> 
     return crop_padding(pred, pad)
 
 
+def _tiling_debug_line(frame: np.ndarray, cfg: PipelineConfig) -> None:
+    padded, _ = pad_to_divisible(frame, cfg.model_divisible_by)
+    y_tiles = _axis_tiling(padded.shape[0], cfg.tile_size, cfg.overlap)
+    x_tiles = _axis_tiling(padded.shape[1], cfg.tile_size, cfg.overlap)
+    print(
+        f"[DEBUG] Tiling frame {frame.shape} into {len(y_tiles)}x{len(x_tiles)} "
+        f"= {len(y_tiles) * len(x_tiles)} tiles "
+        f"(tile_size={cfg.tile_size}, overlap={cfg.overlap})"
+    )
+
+
 def run_pipeline(input_path: Path, output_path: Path, cfg: PipelineConfig, model: InferenceModel) -> None:
     raw = load_image(input_path)
     in_dtype = raw.dtype
 
     if raw.ndim == 2:
+        _tiling_debug_line(raw, cfg)
         pred = run_frame(raw, model, cfg)
         out = cast_like_reference(pred, in_dtype)
     else:
-        frames = [run_frame(raw[t], model, cfg) for t in range(raw.shape[0])]
+        _tiling_debug_line(raw[0], cfg)
+        frames = [run_frame(raw[t], model, cfg) for t in tqdm(range(raw.shape[0]), desc="Frames", unit="frame", file=sys.stderr, dynamic_ncols=True)]
         stacked = np.stack(frames, axis=0)
         out = cast_like_reference(stacked, in_dtype)
 
